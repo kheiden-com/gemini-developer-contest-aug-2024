@@ -1,0 +1,12 @@
+  Use this video to generate a TikTok profile.
+  Use any context including services, products, etc.
+  Be as detailed as possible and include specifics for the type of business, i.e. hotels have details about amenities, stores have hours and products.
+  Do not include links to logos or anything not available in the video.
+  Make sure you use standard TikTok user attributes: open_id,
+display_name,
+bio_description,
+username
+  Only in Output in JSON parseable format, i.e. {'attribute': 'object', 'attribute': 'object'}.
+
+Return the result as an HTML page. Include inline CSS within the HTML to represent the profile on tiktok.
+If image URLs are required, only use the following URL: https://kheiden.com/favicon_io/android-chrome-192x192.png make sure that the size is adjusted correctly.

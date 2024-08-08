@@ -1,0 +1,270 @@
+/* Basic Styling */
+body {
+  font-family: 'Roboto', sans-serif; /* Use Google's Roboto font */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Light gray background color */
+  color: #333; /* Dark gray text color */
+  -webkit-font-smoothing: antialiased; /* Smooth out font rendering */
+  -moz-osx-font-smoothing: grayscale; /* Smooth out font rendering */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  color: #007bff; /* Blue color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+button, .custom-file-upload, .inference-results-selection {
+  background-color: #4CAF50; /* Green background color */
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Forms */
+form {
+  margin-bottom: 2rem;
+}
+
+/* Navigation */
+nav {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Card */
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 2rem;
+}
+
+/* Grid System */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6 {
+  width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4 {
+  width: 33.33%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3 {
+  width: 25%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .col-md-12,
+  .col-lg-12 {
+    width: 100%;
+  }
+
+  .col-md-6,
+  .col-lg-6 {
+    width: 50%;
+  }
+
+  .col-md-4,
+  .col-lg-4 {
+    width: 50%;
+  }
+
+  .col-md-3,
+  .col-lg-3 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .col-sm-12,
+  .col-md-12,
+  .col-lg-12 {
+    width: 100%;
+  }
+
+  .col-sm-6,
+  .col-md-6,
+  .col-lg-6 {
+    width: 100%;
+  }
+
+  .col-sm-4,
+  .col-md-4,
+  .col-lg-4 {
+    width: 100%;
+  }
+
+  .col-sm-3,
+  .col-md-3,
+  .col-lg-3 {
+    width: 100%;
+  }
+}
+
+/* Google Maps-Specific Styles */
+.map {
+  height: 400px; /* Adjust height as needed */
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Overlay the map */
+}
+.custom-file-upload input[type='file'] {
+  display: none;
+}
+.main-content {
+  width: 90%;
+  margin: 0 auto;
+}
+.iframe-output {
+  width: 100%;
+  height: 1000px;
+  border: none;
+  background-color: #ffffff;
+}
+pre {
+  white-space: pre-wrap; /* Ensures that long lines wrap and newlines are preserved */
+  word-wrap: break-word; /* Breaks long words to fit within the container */
+  overflow-wrap: break-word; /* Ensures that long words are broken to fit within the container */
+  overflow-y: auto; /* Adds a vertical scrollbar if the content overflows */
+  max-height: 300px; /* Optional: Limits the height of the log container */
+  background-color: black; /* Optional: Sets background color */
+  color: white; /* Optional: Sets text color */
+  padding: 10px; /* Optional: Adds padding */
+  border: 1px solid gray; /* Optional: Adds border */
+  font-family: "Courier New", monospace; /* Optional: Sets font family */
+  scroll-behavior: smooth; /* Autoscroll to the bottom of the log */
+}
+.collapse-button {
+  float: right;
+  margin: 0 auto;
+  background-color: dimgray; /* Green background color */
+  border: none;
+  color: #f5f5f5;
+  padding: 1rem 2rem;
+  text-align: right; /* Right justify the button */
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 1rem;
+  margin: 4px 2px;
+  border-radius: 16px;
+  cursor: pointer;
+}

@@ -1,0 +1,54 @@
+{
+    "short_name": "Onboard",
+    "name": "Onboard",
+    "start_url": "https://onboard.kheiden.com/main.html?source=pwa",
+    "background_color": "#f5f5f5",
+    "theme_color": "#4CAF50",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "/favicon_io/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/favicon_io/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "purpose": "maskable",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon_io/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "purpose": "any",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon_io/favicon-32x32.png",
+        "sizes": "32x32",
+        "purpose": "any",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon_io/favicon-16x16.png",
+        "sizes": "16x16",
+        "purpose": "any",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "/static/geminihackathon2024/screenshot1.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/static/geminihackathon2024/screenshot2.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

@@ -1,0 +1,3 @@
+Return an HTML page which includes the business attributes extracted from the video.
+Ensure the HTML page is in the aesthetic of a Twitter (aka X) page
+If image URLs are required, only use the following URL: https://kheiden.com/favicon_io/android-chrome-192x192.png make sure that the size is adjusted correctly.

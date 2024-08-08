@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Presence Generator with Google Gemini</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="https://kheiden.com/static/geminihackathon2024/manifest.webmanifest">
+  <link rel="stylesheet" href="{{ url_for('static', filename='onboard.css') }}">
+  <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+  <div class="main-content">
+    <div hx-get="/list_entities"
+    hx-trigger="revealed"
+    hx-target="#entity_list"
+    hx-swap="innerHTML">
+    <h1>Online Presence Generator with Google Gemini</h1></div>
+    <div id="entity_list"></div>
+  </div>
+  <footer>Copyright James Antisdel and Kurt Heiden 2024</footer>
+</body>
+<script src="{{ url_for('static', filename='upload.js') }}"></script>
+<span class="htmx-indicator"> 
+  <img src="https://kheiden.com/static/img/circles.svg" style="max-width: 200px; display: block; margin: 0 auto;"/>
+</span>
+</html>

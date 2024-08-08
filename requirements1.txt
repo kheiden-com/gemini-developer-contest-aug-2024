@@ -1,0 +1,3 @@
+gunicorn
+google-generativeai
+opencv-python-headless

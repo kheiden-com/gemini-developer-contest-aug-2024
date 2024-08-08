@@ -1,0 +1,100 @@
+<div id="entity-{{ entity.id }}" class="card">
+  <div class="card-body">
+    <div id="entity-edit-{{ entity.id }}" hx-target="this" hx-swap="outerHTML">
+      <div class="collapse-button"
+        hx-get="/entity/{{ entity.id }}/collapse"
+        hx-trigger="click"
+        hx-target="#entity-{{ entity.id }}"
+        hx-swap="outerHTML transition:true">
+        Collapse
+      </div>
+      <h2>{{ entity.name }}</h2>
+      <h4>{{ entity.description }}</h4>
+      <button hx-get="/entity/{{ entity.id }}/edit">
+      Click To Edit
+      </button>
+    </div>
+  </div>
+  <div class="card-actions">
+    <div class="card-action-delete">
+        <input type="hidden" name="entity_id" value="{{ entity.id }}">
+        <button
+          hx-post="/delete_entity/{{ entity.id }}"
+          hx-target="#entity-{{ entity.id }}"
+          hx-confirm="Are you sure you wish to delete this Entity?">Delete Entity</button>
+      </form>
+    </div>
+  </div>
+  <div class="entity-log"
+    hx-swap="innerHTML"
+    hx-get="/log/{{ entity.id }}"
+    hx-trigger="every 1s"
+    hx-target="#log-content-{{ entity.id }}">
+    <pre id="log-content-{{ entity.id }}"><code></code></pre>
+  </div>
+  <button class="entity-log-clear"
+    hx-post="/clear_log/{{ entity.id }}"
+    hx-target="#log-content-{{ entity.id }}"
+    hx-confirm="Are you sure you wish to clear the log for this Entity?">Clear Log</button>
+  <div class="card-videos">
+    <h3 class="card-videos-title">Videos</h3>
+    <div class="card-videos-list">
+      {% for video in entity_videos %}
+      <div id="card-video-{{ video['id'] }}" class="card-video">
+        <!-- <video controls style="max-width: 50%;">
+          <source src="/display_video/{{ entity.id }}/{{ video['filename'] }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video> -->
+        <button
+          hx-post="/delete_video/{{ entity.id }}/{{ video['filename'] }}"
+          hx-target="#card-video-{{ video['id'] }}"
+          hx-confirm="Are you sure you wish to delete this Video?">Delete Video</button>
+          <div>Video Name: <a href="/display_video/{{ entity.id }}/{{ video['filename'] }}" target="_blank">{{ video['filename'] }}</a></div>
+          <div>Video Size: {{ video['size_MB'] }} MB</div>
+          <div>Video Duration: {{ video['duration'] }} seconds</div>
+          <div>Video Framerate: {{ video['fps'] }}</div>
+          <div>Estimated Frames for processing: {{ video['est_frames_processed'] }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="card-video-actions">
+      <div
+        hx-trigger="change from:#video-upload-{{ entity.id }}"
+        hx-get="/start_video_upload/{{ entity.id }}"></div>
+      <form hx-encoding="multipart/form-data" hx-post="/upload_video" hx-swap="afterend">
+        <input type="hidden" name="entity_id" value="{{ entity.id }}">
+        <label class="custom-file-upload">
+          <input
+            type="file"
+            name="uploaded_video"
+            accept="video/*"
+            hx-indicator=".htmx-indicator"
+            id="video-upload-{{ entity.id }}"
+            hx-on:change="uploadData('{{ entity.id }}')">
+          Upload Video
+        </label>
+      </form>
+  </div>
+  <button
+  id="start-inference-{{ entity.id }}"
+  hx-post="/start_inference/{{ entity.id }}"
+  hx-target="#entity-{{ entity.id }}"
+  hx-confirm="Starting inference overwrites existing inference for this Entity. Continue?">Start Inference</button>
+  <div class="inference-results">
+    <select class="inference-results-selection"
+      name="profile"
+      hx-get="/populate_iframe/{{ entity.id }}"
+      hx-swap="outerHTML"
+      hx-target="#inference-{{ entity.id }}"
+      hx-trigger="change"
+      hx-indicator=".htmx-indicator">
+      <option value="">Select a Profile</option>
+      {% for profile in all_profiles %}
+      <option value="{{ profile.name }}">{{ profile.name_capitalize }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <iframe class="iframe-output" id="inference-{{ entity.id }}" src="" style="display: none;"></iframe>
+  <hr>
+  </div>
+</div>

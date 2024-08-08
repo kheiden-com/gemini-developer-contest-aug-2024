@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Onboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="https://kheiden.com/static/geminihackathon2024/manifest.webmanifest">
+  <link rel="stylesheet" href="https://kheiden.com/static/geminihackathon2024/base.css">
+  <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script> 
+</head>
+<body>
+  <div class="centered-buttons">
+    <button id="installButton" style="display: none;">Install</button>
+    <button id="continueButton" onclick="window.open('/main.html');" style="display: none;">Continue to Onboard</button>
+  </div>
+  <script>
+    function isPWAInstalled() {
+      return window.matchMedia('(display-mode: standalone)').matches ||
+         navigator.standalone ||
+         document.referrer.includes('android-app://');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const installButton = document.getElementById('installButton');
+      if (isPWAInstalled()) {
+        document.getElementById('continueButton').style.display = '';
+      }
+  
+      let installPrompt;
+      window.addEventListener('beforeinstallprompt', (event) => {
+        installPrompt = event;
+        document.getElementById('installButton').style.display = '';
+      });
+      if (installPrompt === undefined) {
+        // document.getElementById('installButton').style.display = 'none';
+        document.getElementById('continueButton').style.display = '';
+      }
+
+      installButton.addEventListener('click', (event) => {
+        if (installPrompt) {
+          installPrompt.prompt();
+          installPrompt = null;
+        }
+        else {
+          document.getElementById('installButton').style.display = 'none';
+          // document.getElementById('continueButton').style.display = '';
+        }
+      });
+      window.addEventListener('appinstalled', (evt) => {
+        document.getElementById('continueButton').style.display = '';
+        document.getElementById('installButton').style.display = 'none';
+      });
+    });
+    </script>
+</body>
+</html>

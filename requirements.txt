@@ -1,0 +1,3 @@
+flask
+google-cloud-aiplatform
+pillow>=10.4.0

@@ -1,0 +1,15 @@
+<div id="video-{{ video.uid }}">
+  <video src="{{ video.uri }}" controls style="max-width: 50%;"></video>
+  <button
+    hx-get="/process_video/{{ video.filename }}/delete"
+    hx-target="#video-{{ video.uid }}"
+    hx-swap="outerHTML"
+    hx-confirm="Are you sure you wish to delete this video?">Delete</button>
+  <select class="custom-file-upload" name="profile" hx-get="/profiles/{{ video.uid }}" hx-swap="innerHTML" hx-target="#social-output-{{ video.uid }}" hx-indicator=".htmx-indicator">
+    <option value="">Select a Profile</option>
+    {% for profile in all_profiles %}
+    <option value="{{ profile.name }}">{{ profile.name_capitalize }}</option>
+    {% endfor %}
+  </select>
+  <div id="social-output-{{ video.uid }}"></div>
+</div>

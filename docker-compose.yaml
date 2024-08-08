@@ -1,0 +1,17 @@
+services:
+  webserver:
+    image: local:geminidevcontest2024
+    networks:
+      - custom_network
+    volumes:
+      - ./src:/app/src
+      - ./logs:/var/log/gunicorn
+    ports:
+      - "4867:4867"
+    env_file:
+      - .env
+    restart: always
+
+networks:
+  custom_network:
+    driver: bridge

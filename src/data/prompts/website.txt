@@ -1,0 +1,6 @@
+Use this video to generate a detailed website for this business.
+Use any context including services, products, etc. Make sure you have a "Contact us" page, and "About" page, etc.
+Be as detailed as possible and include specifics for the type of business, i.e. hotels have details about amenities, stores have hours and products.
+Do not include links to logos or anything not available in the video.
+Ensure your output is in HTML with clean CSS so we can display to the user and they can use it for a possible website.
+If image URLs are required, only use the following URL: https://kheiden.com/favicon_io/android-chrome-192x192.png make sure that the size is adjusted correctly.
