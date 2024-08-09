@@ -46,10 +46,14 @@ then saved to disk for the purpose of persisting and authorizing access to the a
 This means that this application can be deployed using Cloudflare Zero Trust and the Cloudflare daemon. When leveraging the Cloudflare Zero Trust authorization flow,
 the user will automatically be sending the `Cf-Access-Authenticated-User-Email` header as a part of their requests to the application.
 
-**Building the Docker Image:**
+**Obtaining the Docker Image:**
 
 ```bash
-docker build . -t local:geminidevcontest2024 
+docker build . -t kheidencom:gemini-developer-contest-aug-2024 
+```
+or
+```bash
+docker pull kheidencom/gemini-developer-contest-aug-2024
 ```
 
 **Running the Application with Docker Compose:**
