@@ -54,6 +54,8 @@ docker build . -t local:geminidevcontest2024
 
 **Running the Application with Docker Compose:**
 
+Create an .env file from `.env.template` and populate the `GOOGLE_API_KEY`.
+
 ```bash
 docker-compose up -d
 ```
