@@ -1,4 +1,4 @@
-
+# Ignore all files in this directory
 /ai/__pycache__
 /src/data/user_data
 /src/ai/__pycache__

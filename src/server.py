@@ -1,3 +1,5 @@
+# Flask Server for the AI application.
+
 from flask import Flask, request, render_template, Response
 from ai.utilities import FileHandler
 from ai.utilities import HTMLFormatter

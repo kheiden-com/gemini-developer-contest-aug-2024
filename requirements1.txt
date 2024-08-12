@@ -1,3 +1,6 @@
+# This file contains some of the required libraries for the project
+# Incrementing requirements.txt file index expedites the docker build process
+# via caching.
 gunicorn
 google-generativeai
 opencv-python-headless

@@ -1,3 +1,4 @@
+# Dockerfile for the Python Flask Server
 FROM python:3.12
 
 WORKDIR /app
