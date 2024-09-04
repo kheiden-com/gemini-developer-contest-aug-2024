@@ -1,7 +1,7 @@
-# Gemini Developer Contest - August 2024 - Our Project
-This repository houses our submission for the Google Gemini Developer Contest (August 2024). 
+# Online Presence Generator with Google Gemini 
+[![YouTube Video](https://img.youtube.com/vi/149yw_vryQk/0.jpg)](https://www.youtube.com/watch?v=149yw_vryQk)
 
-## Online Presence Generator with Google Gemini 
+This repository houses our submission for the Google Gemini Developer Contest (August 2024). 
 
 Our solution enables businesses to generate useful structured data from a simple video walkthrough of their business.
 
